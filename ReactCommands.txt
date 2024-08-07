@@ -1,0 +1,162 @@
+*********************************
+Resources Used for this project
+*********************************
+--->https://www.linkedin.com/pulse/12-top-youtube-channels-learn-reactjs-ibrahim-zahir/
+--->https://prettier.io/docs/en/
+--->https://react.dev/learn
+
+***************************
+   Some important Commands
+***************************
+node --version
+
+npm --version
+
+npx create-react-app nameIt
+[Cannot create a project named "nameIt" because of npm naming restrictions:  
+* name can no longer contain capital letters
+Please choose a different project name. ]
+
+npx create-react-app nameit
+
+npm install --save-exact @rstacruz/startup-name-generator [ optional command ]
+
+******************
+    PRETTIER
+******************
+
+Prettier is an opinionated code formatter with support for:
+JavaScript (including experimental features)
+JSX
+Angular
+Vue
+Flow
+TypeScript
+CSS, Less, and SCSS
+HTML
+Ember/Handlebars
+JSON
+GraphQL
+Markdown, including GFM and MDX v1
+YAML
+
+It removes all original styling* and ensures that all outputted code conforms to a consistent style. (See this blog post)
+
+*****************
+     State   
+*****************
+
+a) Functional based Components
+
+import React from 'react';
+import './App.css';
+import Header from './../Header/Header.js';
+import { useState } from 'react';
+
+function app() {
+
+    useState = {
+        headerText: 'hello world',
+    };
+
+    return (
+        <div>
+            <Header />
+            <h3>{useState.headerText}</h3>
+
+            <button onClick={() => {
+                useState.headerText = "tada!!"
+                console.log(useState.headerText);
+            }}>Click me!</button>
+
+        </div>
+    );
+}
+
+export default app;
+
+b) Class Based Components
+
+import React from 'react';
+import './App.css';
+import Header from './../Header/Header.js';
+
+class app extends React.Component {
+
+    state = {
+        headerText: 'hello world',
+    };
+
+    render () {
+        return (
+        <div>
+            <Header />
+            <h3>{this.state.headerText}</h3>
+            <button onClick={() => {
+                this.state.headerText = "tada!!"
+                console.log(this.state.headerText);
+            }}>Click me!</button>
+        </div>
+        );
+    };
+}
+
+export default app;
+
+************************************************
+   Destructuring props & passing multiple props
+************************************************
+
+App.js
+class App extends React.Component {
+    state = {
+        headText1 : 'hello',
+        headText2 : 'hello2',
+    }
+
+    render() {
+        return (
+
+            <Header headTitle1 = {this.state.headText1} headTitle2 = {this.state.headText2}/>
+        )
+    }
+}
+
+Header.js
+const Header = ({headTitle1, headTitle2}) => {
+    return (
+
+    <div>
+        <h1>{headTitle1} {headTitle2}</h1>
+    </div>
+    )
+}
+
+export default Header;
+
+***************************************
+    child -----> parent communication
+***************************************
+
+App.js
+handleInputChange = (data) => {
+    this.setState({ headerImageExpanded : data.length > 0 ? false : true ,headerTextExpanded : data.length > 0 ? false : true })
+}
+
+render(
+    return (
+        <SearchBox onInputChange = {this.handleInputChange} />
+    )
+)
+
+SearchBox.js
+<input onChange = {  (event) => {
+    this.props.onInputChange(event.target.value);
+}}
+
+**********************************
+    Name generator
+**********************************
+
+command to generate random names (Library)----> npm install -g @rstacruz/startup-name-generator
+
