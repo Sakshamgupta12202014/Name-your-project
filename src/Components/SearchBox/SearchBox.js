@@ -10,7 +10,10 @@ class search extends React.Component {
             <div className='box'>
                 <input onChange = { (event) => {
                     this.props.onInputChange(event.target.value)
+                    
                 } } className="searchbox" type="text" placeholder='Enter keywords here' />
+
+                
             </div>
         )
     }

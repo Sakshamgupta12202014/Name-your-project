@@ -28,7 +28,9 @@
 }
 
 .header-text-expanded {
-    font-size: 40px;
+    font-size: 35px;
+    color: rgb(0, 140, 255);
+    font-style: bold;
 }
 
 .header-text-contracted {
