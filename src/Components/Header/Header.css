@@ -10,6 +10,7 @@
 .header .header-image{
     width: auto;
     transition: max-width 1s;
+    border-radius: 20px;
 }
 
 .header-image-expanded {

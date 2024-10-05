@@ -15,6 +15,7 @@ class app extends React.Component {
          suggestedNames:[],
          result:false,
          
+         
     };
 
     handleInputChange = (data) => {
